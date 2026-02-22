@@ -50,7 +50,7 @@ export default function Hero() {
                     </p>
 
                     <p className="text-slate-400 max-w-lg mx-auto md:mx-0 leading-relaxed">
-                        I build data intelligence platforms and analytics solutions that turn complex data into actionable insights.
+                        I specialise in <strong className="text-slate-300">SQL, Python, Power BI & Tableau</strong> — transforming raw data into dashboards, risk models, and business insights that help teams make faster, smarter decisions.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">

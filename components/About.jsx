@@ -93,15 +93,15 @@ export default function About() {
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
                         <span className="border-b-4 border-cyan-500 pb-1">About Me</span>
                     </h2>
-                    <p className="text-slate-400">My journey into code and data</p>
+                    <p className="text-slate-400">My journey in data analytics & business intelligence</p>
                 </div>
 
                 <div className="bg-slate-800/50 p-8 rounded-2xl border border-slate-700/50 backdrop-blur-sm shadow-xl">
                     <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        I am an <strong className="text-cyan-400">MCA student at Sir M Visvesvaraya Institute of Technology</strong>, Bengaluru, with strong expertise in data analytics and data-driven decision making.
+                        I am an <strong className="text-cyan-400">MCA graduate from Sir M Visvesvaraya Institute of Technology</strong>, Bengaluru, specialising in <strong className="text-white">Data Analytics</strong>. I turn messy, raw datasets into clear insights that drive business decisions — using Python, SQL, Power BI, and Tableau.
                     </p>
                     <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        My passion lies in bridging the gap between application development and data science. I enjoy building modern frontends and robust backends, then supercharging them with analytical pipelines and BI dashboards to solve real-world problems.
+                        Across internships at <strong className="text-white">Deloitte, UptoSkills, and 360DigiTMG</strong>, I've built end-to-end analytics pipelines, KPI dashboards, and risk models. I care about one thing: translating numbers into stories that stakeholders can act on — fast.
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-slate-700/50">
                         <StatCard number="03+" label="Internships" />
