@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Github, Linkedin, Mail, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, MapPin } from 'lucide-react';
 
 const SocialLink = ({ href, icon }) => (
     <a
@@ -26,16 +26,31 @@ export default function Hero() {
 
             <div className="max-w-7xl w-full mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
                 <div className="space-y-6 text-center md:text-left">
+
+                    {/* Open to Work Badge */}
+                    <div className="flex justify-center md:justify-start">
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-semibold">
+                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                            Open to Work — Full-time &amp; Freelance
+                        </span>
+                    </div>
+
                     <h2 className="text-cyan-400 font-medium tracking-wide">Hello, I'm</h2>
                     <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight">
                         Harish <span className="text-slate-500">Gouda</span>
                     </h1>
                     <h3 className="text-2xl md:text-3xl text-slate-400 font-light">
-                        Full-Stack Developer, Data Analyst <br />
-                        <span className="text-violet-400 font-semibold">& Innovator</span>
+                        Data Analyst
                     </h3>
+
+                    {/* Location + availability line */}
+                    <p className="flex items-center justify-center md:justify-start gap-1.5 text-slate-500 text-sm">
+                        <MapPin size={14} className="text-cyan-500" />
+                        Bengaluru, India &nbsp;·&nbsp; Available for Data Analyst roles &amp; remote opportunities
+                    </p>
+
                     <p className="text-slate-400 max-w-lg mx-auto md:mx-0 leading-relaxed">
-                        I build scalable full-stack applications and data intelligence platforms that turn complex data into actionable insights.
+                        I build data intelligence platforms and analytics solutions that turn complex data into actionable insights.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
@@ -46,7 +61,7 @@ export default function Hero() {
                             Let's Talk
                         </button>
                         <a
-                            href="https://drive.google.com/file/d/11_QZ4V7BF4fSi_NTq5sw1N9Ej7BasUVu/view?usp=sharing"
+                            href="https://drive.google.com/file/d/1QOoxO2aY59rP3ljYl_kErTTkHdVfI2nc/view?usp=sharing"
                             target="_blank"
                             rel="noreferrer"
                             className="px-8 py-3 border border-slate-700 text-slate-300 rounded-full font-medium hover:bg-slate-800 hover:text-white transition-all flex items-center justify-center gap-2"

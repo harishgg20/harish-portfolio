@@ -3,6 +3,7 @@ import React from 'react';
 import { Database, Award, ExternalLink } from 'lucide-react';
 
 const certifications = [
+    "Alteryx Designer Core Certification",
     "IBM (IT & Customer Engagement)",
     "Microsoft (Power BI)",
     "Cisco (Python & Analytics)",

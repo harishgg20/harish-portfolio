@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { Code2, BarChart3, Terminal, Server, Cpu } from 'lucide-react';
 
 const marqueeSkills = [
-    "React.js", "Next.js", "Python", "TypeScript", "Tailwind CSS", "Node.js",
-    "PostgreSQL", "Pandas", "NumPy", "Scikit-Learn", "Tableau", "Git",
-    "FastAPI", "Express", "Matplotlib", "Seaborn", "AWS", "Docker"
+    "Python", "Pandas", "NumPy", "SQL", "Tableau", "Power BI",
+    "Scikit-Learn", "Matplotlib", "Seaborn", "Excel", "Statistics",
+    "EDA", "Machine Learning", "Data Wrangling", "Jupyter", "PostgreSQL"
 ];
 
 const SkillCategory = ({ title, skills, icon }) => (
@@ -35,11 +35,11 @@ const SkillRadar = () => {
     const levels = 4;
 
     const data = [
-        { name: 'Frontend', value: 90 },
-        { name: 'Backend', value: 85 },
-        { name: 'Data Sci', value: 90 },
-        { name: 'DevOps', value: 75 },
-        { name: 'Bus. Intel', value: 85 },
+        { name: 'Python', value: 92 },
+        { name: 'SQL', value: 88 },
+        { name: 'Statistics', value: 85 },
+        { name: 'Visualization', value: 90 },
+        { name: 'ML / AI', value: 82 },
     ];
 
     const getCoordinates = (value, index, total) => {
@@ -156,10 +156,10 @@ export default function Skills() {
                     </div>
 
                     <div className="md:col-span-3 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 h-full">
-                        <SkillCategory title="Full-Stack Dev" icon={<Code2 className="text-violet-400" />} skills={['Next.js', 'React.js', 'Tailwind', 'Node.js', 'FastAPI', 'PostgreSQL']} />
-                        <SkillCategory title="Data Analytics" icon={<BarChart3 className="text-cyan-400" />} skills={['Python', 'Pandas', 'NumPy', 'EDA', 'Scikit-Learn', 'Statistics']} />
-                        <SkillCategory title="Visualization" icon={<Terminal className="text-emerald-400" />} skills={['Tableau', 'Excel', 'Matplotlib', 'Seaborn', 'Dashboards']} />
-                        <SkillCategory title="DevOps & Tools" icon={<Server className="text-orange-400" />} skills={['Git', 'GitHub', 'Docker', 'AWS', 'Linux', 'CI/CD']} />
+                        <SkillCategory title="Data Analytics" icon={<BarChart3 className="text-cyan-400" />} skills={['Python', 'Pandas', 'NumPy', 'SQL', 'EDA', 'Statistics']} />
+                        <SkillCategory title="Machine Learning" icon={<Cpu className="text-violet-400" />} skills={['Scikit-Learn', 'Regression', 'Classification', 'Clustering', 'Feature Engineering']} />
+                        <SkillCategory title="Visualization" icon={<Terminal className="text-emerald-400" />} skills={['Tableau', 'Power BI', 'Matplotlib', 'Seaborn', 'Excel Dashboards']} />
+                        <SkillCategory title="Data Tools" icon={<Server className="text-orange-400" />} skills={['PostgreSQL', 'MySQL', 'Jupyter', 'Git', 'Google Colab', 'VS Code']} />
                     </div>
                 </div>
             </div>

@@ -69,10 +69,10 @@ const ContributionGraph = ({ year, username }) => {
                         <div
                             key={i}
                             className={`w-3 h-3 rounded-[2px] transition-all duration-200 hover:scale-125 ${!item ? 'bg-transparent' :
-                                    item.count === 0 ? 'bg-slate-800' :
-                                        item.count < 3 ? 'bg-cyan-900/60' :
-                                            item.count < 6 ? 'bg-cyan-700' :
-                                                item.count < 10 ? 'bg-cyan-500' : 'bg-cyan-300'
+                                item.count === 0 ? 'bg-slate-800' :
+                                    item.count < 3 ? 'bg-cyan-900/60' :
+                                        item.count < 6 ? 'bg-cyan-700' :
+                                            item.count < 10 ? 'bg-cyan-500' : 'bg-cyan-300'
                                 }`}
                             title={item ? `${item.date}: ${item.count} contributions` : ''}
                         />
@@ -98,7 +98,7 @@ export default function About() {
 
                 <div className="bg-slate-800/50 p-8 rounded-2xl border border-slate-700/50 backdrop-blur-sm shadow-xl">
                     <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        I am an <strong className="text-cyan-400">MCA student at Sir M Visvesvaraya Institute of Technology</strong>, Bengaluru, with strong expertise in full-stack development and data analytics.
+                        I am an <strong className="text-cyan-400">MCA student at Sir M Visvesvaraya Institute of Technology</strong>, Bengaluru, with strong expertise in data analytics and data-driven decision making.
                     </p>
                     <p className="text-lg text-slate-300 leading-relaxed mb-6">
                         My passion lies in bridging the gap between application development and data science. I enjoy building modern frontends and robust backends, then supercharging them with analytical pipelines and BI dashboards to solve real-world problems.
@@ -125,8 +125,8 @@ export default function About() {
                                         key={year}
                                         onClick={() => setContributionYear(year)}
                                         className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all ${contributionYear === year
-                                                ? 'bg-cyan-500/20 text-cyan-400 shadow-sm'
-                                                : 'text-slate-500 hover:text-slate-300'
+                                            ? 'bg-cyan-500/20 text-cyan-400 shadow-sm'
+                                            : 'text-slate-500 hover:text-slate-300'
                                             }`}
                                     >
                                         {year}
