@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const SITE_URL = 'https://harishgg20.github.io/harish-portfolio';
+const SITE_URL = 'https://harish-portfolio-mkps.vercel.app';
 const FULL_NAME = 'Harish Gouda';
 const TITLE = 'Harish Gouda | Data Analyst — SQL, Python, Power BI & Tableau';
 const DESCRIPTION =
