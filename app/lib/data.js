@@ -15,11 +15,11 @@ export const portfolioData = {
         title: "About Me",
         subtitle: "My journey into code and data",
         description: [
-            "I am an MCA student at Sir M Visvesvaraya Institute of Technology, Bengaluru, with strong expertise in data analytics and data-driven decision making.",
-            "My passion lies in bridging the gap between application development and data science. I enjoy building modern frontends and robust backends, then supercharging them with analytical pipelines and BI dashboards to solve real-world problems."
+            "I am an MCA graduate from Sir M Visvesvaraya Institute of Technology, Bengaluru, currently working as an Analyst at Applied Systems — where I work with data to drive business decisions and operational insights.",
+            "My passion lies in bridging the gap between raw data and real-world impact. I enjoy building analytical pipelines, BI dashboards, and data solutions using Python, SQL, Power BI, and Alteryx to help teams make faster, smarter decisions."
         ],
         stats: [
-            { number: "03+", label: "Internships" },
+            { number: "1", label: "Current Role" },
             { number: "10+", label: "Projects" },
             { number: "24/7", label: "Committed" },
             { number: "100%", label: "Delivered" }
@@ -53,6 +53,17 @@ export const portfolioData = {
     },
 
     experience: [
+        {
+            role: "Analyst",
+            company: "Applied Systems",
+            period: "Apr 2025 - Present",
+            current: true,
+            description: [
+                "Working as an Analyst contributing to data-driven business operations.",
+                "Leveraging Python, SQL, Power BI, and Alteryx for analytics and reporting.",
+                "Translating business requirements into actionable data insights."
+            ]
+        },
         {
             role: "Data Analyst Intern",
             company: "UptoSkills",

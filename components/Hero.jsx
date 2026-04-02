@@ -27,11 +27,11 @@ export default function Hero() {
             <div className="max-w-7xl w-full mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
                 <div className="space-y-6 text-center md:text-left">
 
-                    {/* Open to Work Badge */}
+                    {/* Currently Working Badge */}
                     <div className="flex justify-center md:justify-start">
-                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-semibold">
-                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                            Open to Work — Full-time &amp; Freelance
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm font-semibold">
+                            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                            Currently @ Applied Systems
                         </span>
                     </div>
 
@@ -40,13 +40,13 @@ export default function Hero() {
                         Harish <span className="text-slate-500">Gouda</span>
                     </h1>
                     <h3 className="text-2xl md:text-3xl text-slate-400 font-light">
-                        Data Analyst
+                        Analyst{' '}<span className="text-slate-600">|</span>{' '}<span className="text-cyan-400 font-medium">Applied Systems</span>
                     </h3>
 
                     {/* Location + availability line */}
                     <p className="flex items-center justify-center md:justify-start gap-1.5 text-slate-500 text-sm">
                         <MapPin size={14} className="text-cyan-500" />
-                        Bengaluru, India &nbsp;·&nbsp; Available for Data Analyst roles &amp; remote opportunities
+                        Bengaluru, India &nbsp;·&nbsp; Open to freelance &amp; remote opportunities
                     </p>
 
                     <p className="text-slate-400 max-w-lg mx-auto md:mx-0 leading-relaxed">
