@@ -80,6 +80,17 @@ const kb = {
     ],
     experience: [
         {
+            role: "Analyst",
+            company: "Applied Systems",
+            period: "Apr 2025 – Present",
+            current: true,
+            highlights: [
+                "Working as an Analyst contributing to data-driven business operations",
+                "Leveraging Python, SQL, Power BI, and Alteryx for analytics and reporting",
+                "Translating business requirements into actionable data insights"
+            ]
+        },
+        {
             role: "Data Analyst Intern",
             company: "UptoSkills",
             period: "Feb 2025 – May 2025",
@@ -145,7 +156,7 @@ const generateResponse = (input) => {
 
     // 1. Greetings
     if (['hello', 'hi', 'hey', 'greetings', 'yo', 'sup'].some(w => text.includes(w)) && text.length < 20) {
-        return "Hello! 👋 I'm Harish's AI Assistant. I know everything about his portfolio!\n\nYou can ask me about:\n• **Projects** (Loan Risk, KYC, UPI, Inventory, Alteryx)\n• **Skills** (Python, Power BI, SQL, Tableau…)\n• **Experience** (Deloitte, UptoSkills, 360DigiTMG)\n• **Certifications** & **Education**\n• **Contact** info & Resume\n\nWhat would you like to know? 🚀";
+        return "Hello! 👋 I'm Harish's AI Assistant. I know everything about his portfolio!\n\nYou can ask me about:\n• **Projects** (Loan Risk, KYC, UPI, Inventory, Alteryx)\n• **Skills** (Python, Power BI, SQL, Tableau, Alteryx…)\n• **Current Role** (Analyst @ Applied Systems)\n• **Experience** (Applied Systems, Deloitte, UptoSkills, 360DigiTMG)\n• **Certifications** & **Education**\n• **Contact** info & Resume\n\nWhat would you like to know? 🚀";
     }
     if (['bye', 'goodbye', 'see you', 'thanks', 'thank you'].some(w => text.includes(w))) {
         return "Thanks for visiting Harish's portfolio! Feel free to reach out at **harishgouda52001@gmail.com** or connect on [LinkedIn](https://linkedin.com/in/harishgouda20). Have a great day! 👋";
@@ -153,17 +164,17 @@ const generateResponse = (input) => {
 
     // 2. Resume
     if (['resume', 'cv', 'download', 'pdf'].some(w => text.includes(w))) {
-        return `You can view Harish's resume here:\n📄 [Click to Open Resume](${kb.contact.resume})\n\nIt covers his experience at Deloitte, UptoSkills & 360DigiTMG, all his data analytics projects, and certifications like **Alteryx Designer Core**.`;
+        return `You can view Harish's resume here:\n📄 [Click to Open Resume](${kb.contact.resume})\n\nIt covers his current role as **Analyst at Applied Systems**, experience at Deloitte, UptoSkills & 360DigiTMG, all his data analytics projects, and certifications like **Alteryx Designer Core**.`;
     }
 
     // 3. Contact / Hire
     if (['contact', 'email', 'phone', 'reach', 'hire', 'available', 'opportunity', 'mail', 'location', 'city'].some(w => text.includes(w))) {
-        return `Here's how you can reach Harish:\n\n📧 **Email:** ${kb.contact.email}\n📞 **Phone:** ${kb.contact.phone}\n📍 **Location:** ${kb.contact.location}\n\n🔗 [LinkedIn](${kb.contact.linkedin}) | [GitHub](${kb.contact.github})\n\nHe's open to **Data Analyst** roles and freelance analytics projects!`;
+        return `Here's how you can reach Harish:\n\n📧 **Email:** ${kb.contact.email}\n📞 **Phone:** ${kb.contact.phone}\n📍 **Location:** ${kb.contact.location}\n\n🔗 [LinkedIn](${kb.contact.linkedin}) | [GitHub](${kb.contact.github})\n\nCurrently working as **Analyst @ Applied Systems**. Open to freelance analytics projects too!`;
     }
 
     // 4. LinkedIn
     if (text.includes('linkedin')) {
-        return `Connect with Harish on LinkedIn:\n🔗 [linkedin.com/in/harishgouda20](${kb.contact.linkedin})\n\nHis profile has all his certifications, experience at Deloitte & UptoSkills, and endorsements.`;
+        return `Connect with Harish on LinkedIn:\n🔗 [linkedin.com/in/harishgouda20](${kb.contact.linkedin})\n\nHis profile has all his certifications, his current role at **Applied Systems**, experience at Deloitte & UptoSkills, and endorsements.`;
     }
 
     // 5. GitHub
@@ -186,12 +197,13 @@ const generateResponse = (input) => {
         return `Harish has built **5 data analytics projects**:\n\n${list}\n\nAsk me about any specific one for details (problem, solution, achievements & GitHub link)!`;
     }
 
-    // 8. Experience / Internship
-    if (['experience', 'internship', 'intern', 'deloitte', 'uptoskills', '360digi', 'job', 'company', 'worked'].some(w => text.includes(w))) {
+    // 8. Experience / Current Role / Internship
+    if (['experience', 'internship', 'intern', 'deloitte', 'uptoskills', '360digi', 'job', 'company', 'worked', 'applied systems', 'current', 'analyst', 'working'].some(w => text.includes(w))) {
+        const current = kb.experience.find(e => e.current);
         const expList = kb.experience.map(e =>
-            `**${e.role} @ ${e.company}** (${e.period})\n${e.highlights.map(h => `  • ${h}`).join('\n')}`
+            `${e.current ? '🟢 ' : ''}**${e.role} @ ${e.company}** (${e.period})${e.current ? ' *(Current)*' : ''}\n${e.highlights.map(h => `  • ${h}`).join('\n')}`
         ).join('\n\n');
-        return `Harish has **3 internships** in data analytics:\n\n${expList}`;
+        return `Harish is currently working as **${current.role} @ ${current.company}** (${current.period}).\n\nFull professional journey:\n\n${expList}`;
     }
 
     // 9. Certifications
@@ -217,12 +229,12 @@ const generateResponse = (input) => {
     // 12. Education
     if (['education', 'degree', 'qualification', 'college', 'university', 'school', 'mca', 'bsc', 'student'].some(w => text.includes(w))) {
         const degList = kb.education.map(d => `• **${d.degree}**\n  ${d.school}`).join('\n');
-        return `Harish's educational background:\n\n${degList}\n\nHe's currently pursuing his **MCA** at Sir M Visvesvaraya Institute of Technology, Bengaluru.`;
+        return `Harish's educational background:\n\n${degList}\n\nHe completed his **MCA** from Sir M Visvesvaraya Institute of Technology, Bengaluru, and is now working as **Analyst @ Applied Systems**.`;
     }
 
     // 13. About / Bio / Introduction
     if (['about', 'who', 'bio', 'introduce', 'yourself', 'harish'].some(w => text.includes(w))) {
-        return `**Harish Gouda** is a Data Analyst and MCA student at **Sir M Visvesvaraya Institute of Technology**, Bengaluru.\n\nHe specializes in:\n• Exploratory Data Analysis (EDA)\n• Power BI & Tableau dashboards\n• Python data pipelines\n• SQL & database analytics\n• Alteryx ETL workflows\n\nHe has worked as a Data Analytics Intern at **Deloitte Australia**, **UptoSkills**, and **360DigiTMG**, and holds the **Alteryx Designer Core Certification**.\n\n📧 ${kb.contact.email} | [LinkedIn](${kb.contact.linkedin})`;
+        return `**Harish Gouda** is an **Analyst at Applied Systems**, Bengaluru — and an MCA graduate from Sir M Visvesvaraya Institute of Technology.\n\n🟢 **Currently:** Analyst @ Applied Systems (Apr 2025 – Present)\n\nHe specializes in:\n• Exploratory Data Analysis (EDA)\n• Power BI & Tableau dashboards\n• Python data pipelines\n• SQL & database analytics\n• Alteryx ETL workflows\n\nPreviously interned at **Deloitte Australia**, **UptoSkills**, and **360DigiTMG**. Holds the **Alteryx Designer Core Certification**.\n\n📧 ${kb.contact.email} | [LinkedIn](${kb.contact.linkedin})`;
     }
 
     // 14. Help / what can you do
