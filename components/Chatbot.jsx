@@ -182,7 +182,16 @@ const generateResponse = (input) => {
         return `Check out Harish's GitHub:\n🐙 [github.com/harishgg20](${kb.contact.github})\n\nIt has all his data analytics projects including Loan Risk Analysis, KYC Risk, UPI Transaction Analysis, and more!`;
     }
 
-    // 6. Specific project by keywords
+    // 6. Experience / Current Role / Internship — MUST come before project keyword loop
+    if (['experience', 'internship', 'intern', 'deloitte', 'uptoskills', '360digi', 'job', 'company', 'work', 'worked', 'working', 'applied systems', 'current', 'analyst', 'where'].some(w => text.includes(w))) {
+        const current = kb.experience.find(e => e.current);
+        const expList = kb.experience.map(e =>
+            `${e.current ? '🟢 ' : ''}**${e.role} @ ${e.company}** (${e.period})${e.current ? ' *(Current)*' : ''}\n${e.highlights.map(h => `  • ${h}`).join('\n')}`
+        ).join('\n\n');
+        return `Harish is currently working as **${current.role} @ ${current.company}** (${current.period}).\n\nFull professional journey:\n\n${expList}`;
+    }
+
+    // 7. Specific project by keywords
     for (const project of kb.projects) {
         const titleMatch = text.includes(project.title.toLowerCase());
         const keywordMatch = project.keywords.some(kw => text.includes(kw));
@@ -191,19 +200,10 @@ const generateResponse = (input) => {
         }
     }
 
-    // 7. All projects overview
-    if (['project', 'work', 'built', 'portfolio', 'what have'].some(w => text.includes(w))) {
+    // 8. All projects overview
+    if (['project', 'built', 'portfolio', 'what have'].some(w => text.includes(w))) {
         const list = kb.projects.map(p => `• **${p.title}** — ${p.tech}`).join('\n');
         return `Harish has built **5 data analytics projects**:\n\n${list}\n\nAsk me about any specific one for details (problem, solution, achievements & GitHub link)!`;
-    }
-
-    // 8. Experience / Current Role / Internship
-    if (['experience', 'internship', 'intern', 'deloitte', 'uptoskills', '360digi', 'job', 'company', 'worked', 'applied systems', 'current', 'analyst', 'working'].some(w => text.includes(w))) {
-        const current = kb.experience.find(e => e.current);
-        const expList = kb.experience.map(e =>
-            `${e.current ? '🟢 ' : ''}**${e.role} @ ${e.company}** (${e.period})${e.current ? ' *(Current)*' : ''}\n${e.highlights.map(h => `  • ${h}`).join('\n')}`
-        ).join('\n\n');
-        return `Harish is currently working as **${current.role} @ ${current.company}** (${current.period}).\n\nFull professional journey:\n\n${expList}`;
     }
 
     // 9. Certifications
